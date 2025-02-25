@@ -16,9 +16,14 @@ class ActionWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Row(
         children: [
-          const Spacer(),
           Column(
-            children: [Icon(icon, size: 45), Text(name)],
+            children: [
+              Icon(icon, size: 30),
+              Text(
+                name,
+                style: const TextStyle(fontSize: 12),
+              )
+            ],
           )
         ],
       ),
@@ -28,7 +33,7 @@ class ActionWidget extends StatelessWidget {
 
 class TabItem extends StatelessWidget {
   final String name;
-  final IconData icon;
+  final Widget icon;
 
   const TabItem({
     super.key,
@@ -55,7 +60,7 @@ class TabItem extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 4, bottom: 5, left: 8),
-                  child: Icon(icon, color: Colors.white),
+                  child: icon,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8, bottom: 8, right: 8, left: 5),

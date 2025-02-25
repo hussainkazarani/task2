@@ -10,12 +10,20 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int selectedIndex = 1;
-  List<Widget> pages = const [
-    Page1(),
-    MainPage(),
-    Page3(),
-    Page4(),
-    Page5(),
+  List<Widget> pages = [
+    const Page1(),
+    PageView(
+      scrollDirection: Axis.vertical,
+      children: const [
+        MainPage(imgname: "image1"),
+        MainPage(imgname: "image2"),
+        MainPage(imgname: "image3"),
+        MainPage(imgname: "image4"),
+      ],
+    ),
+    const Page3(),
+    const Page4(),
+    const Page5(),
   ];
 
   void onButtonTap(int index) {
@@ -33,6 +41,7 @@ class _NavBarState extends State<NavBar> {
           style: TextStyle(fontWeight: FontWeight.w900),
         ),
         centerTitle: false,
+        backgroundColor: Colors.black,
         actions: const [
           Padding(
             padding: EdgeInsets.all(8.0),
@@ -62,7 +71,7 @@ class _NavBarState extends State<NavBar> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-              icon: selectedIndex == 0 ? Icon(Icons.home, size: 30) : Icon(Icons.home_outlined, size: 30),
+              icon: selectedIndex == 0 ? const Icon(Icons.home, size: 30) : const Icon(Icons.home_outlined, size: 30),
               label: "Home"),
           BottomNavigationBarItem(
             icon: Image.asset(

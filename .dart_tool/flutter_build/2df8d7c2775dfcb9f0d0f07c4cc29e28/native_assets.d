@@ -1,0 +1,1 @@
+ /Users/kazarani/Documents/GitHub/task2/.dart_tool/flutter_build/2df8d7c2775dfcb9f0d0f07c4cc29e28/native_assets.yaml: 
